@@ -1,0 +1,215 @@
+/* CSS Crítico - Above the fold */
+:root {
+    --azul-oscuro: #1C2A45;
+    --azul-medio: #2D4262;
+    --dorado: #C9A96C;
+    --blanco: #FFFFFF;
+    --gris-claro: #E8E5DD;
+    --verde: #4CAF50;
+    --rojo: #E74C3C;
+    --naranja: #FF9800;
+    --morado: #9C27B0;
+    --beige: #F5F0E6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--beige);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Skip to content para accesibilidad */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 10000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Header público */
+.public-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.public-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--dorado);
+    margin-bottom: 40px;
+}
+
+.public-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.public-logo-icon {
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle at 30% 30%, var(--blanco), var(--dorado));
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(201, 169, 108, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: var(--azul-oscuro);
+}
+
+.public-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--azul-oscuro);
+}
+
+.public-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.public-nav a {
+    text-decoration: none;
+    color: var(--azul-oscuro);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.public-nav a:hover,
+.public-nav a:focus {
+    background-color: rgba(201, 169, 108, 0.2);
+    outline: 2px solid var(--dorado);
+    outline-offset: 2px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(28, 42, 69, 0.8), rgba(28, 42, 69, 0.8)), 
+                url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--blanco);
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--dorado);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--dorado);
+    color: var(--azul-oscuro);
+    padding: 14px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #d8b86c;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    outline: 2px solid var(--azul-oscuro);
+    outline-offset: 2px;
+}
+
+/* Responsive crítico */
+@media (max-width: 768px) {
+    .public-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .public-nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .public-logo-text {
+        font-size: 2rem;
+    }
+
+    .public-logo-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
